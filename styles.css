@@ -8,8 +8,10 @@ body {
   background-color: #f4f4f4;
   color: #333;
 }
-header {
-  padding: 10px 0;
+h1,
+h2 {
+  font-family: Helvetica, sans-serif;
+  /* padding: 10px 0; */
 }
 footer {
   margin-top: auto;
