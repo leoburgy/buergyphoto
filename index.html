@@ -3,68 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bürgy Photographie</title>
+    <title>BÜRGY PHOTO</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./media/favicon_io/favicon.ico"/>
   </head>
   <body>
     <header>
-      <h1>Bürgy Photo</h1>
-
+      <h1>
+        <a href="index.html">&#9678 BÜRGY <span>PHOTO</span></a>
+      </h1>
       <nav class="menu">
-        <a class="active" href="index.html">Home</a>
-        <a href="stories.html">Stories</a>
-        <a href="personal.html">Personal Work</a>
-        <a href="info.html">Info</a>
+        <a href="#stories">Stories</a>
+        <a href="#rates">Rates</a>
       </nav>
     </header>
 
     <main>
-      <section id="gallery">
-        <figure>
-          <img src="media/DSC_5136.jpg" alt="" />
-          <figcaption>Look at the sky</figcaption>
-        </figure>
+      <section id="about">
+        <h2>About</h2>
+        <p>
+            Welcome to my portfolio. My work focuses on documentation of theatre
+            and dance works. I also cover events such as weddings and group
+            activities with a reportage approach, to render at best the
+            atmosphere of the moment. I work with a Nikon D850 and Zeiss Milvus
+            lenses (1.4/25, 1.4/50 and 2/135).
 
-        <figure>
-          <img src="media/DSC_5146.jpg" alt="" />
-          <figcaption>Schlittel!</figcaption>
-        </figure>
+        </p>
+      </section>
 
-        <figure>
-          <img src="media/DSC_5152.jpg" alt="" />
-          <figcaption>Did you see the frozen waterfall?</figcaption>
-        </figure>
+      <section id="stories">
+        <h2>Stories</h2>
+        <div class="gallery">
+          <figure>
+            <img src="media/DSC_5136.jpg" alt="" />
+            <figcaption>Look at the sky</figcaption>
+          </figure>
 
-        <figure>
-          <img src="media/DSC_5175.jpg" alt="" />
-          <figcaption>What a m'as-tu-vu!</figcaption>
-        </figure>
+          <figure>
+            <img src="media/DSC_5146.jpg" alt="" />
+            <figcaption>Schlittel!</figcaption>
+          </figure>
 
-        <figure>
-          <img src="media/DSC_5183.jpg" alt="" />
-          <figcaption>Let's unfold some sunny vibes</figcaption>
-        </figure>
+          <figure>
+            <img src="media/DSC_5152.jpg" alt="" />
+            <figcaption>Did you see the frozen waterfall?</figcaption>
+          </figure>
+
+          <figure>
+            <img src="media/DSC_5175.jpg" alt="" />
+            <figcaption>What a m'as-tu-vu!</figcaption>
+          </figure>
+
+          <figure>
+            <img src="media/DSC_5183.jpg" alt="" />
+            <figcaption>Let's unfold some sunny vibes</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="rates">
+        <h2>Rates</h2>
+        Flat rates
+        <ul>
+          <li>portraits (1h; all inclusive): CHF 300</li>
+          <li>corporate portraits (1h; all inclusive): CHF 500</li>
+        </ul>
+        Hourly rates (weddings, artistic performances)
+        <ul>
+          <li>Shooting: CHF 180</li>
+          <li>Postprocessing: CHF 100</li>
+        </ul>
+        In addition, beyond 30 min transportation:
+        <ul>
+          <li>Travel expenses (per hour): CHF 30</li>
+        </ul>
       </section>
     </main>
     <footer>
-      For more details, contact
-      <address property="Email">
+      <address>
+        Neuchâtel - Switzerland
         <a href="mailto:leo.burgy@gmail.com">leo.burgy@gmail.com</a>
-      </address>
-      <address property="Phone">
-        <a href="tel:+1234567890">+41763084807</a>
-      </address>
-      <address property="Instagram">
         <a href="https://www.instagram.com/leoburgy" target="_blank"
           >@leoburgy</a
         >
+        <a href="tel:+1234567890">+41763084807</a>
       </address>
       <p>
         &copy;
         <script>
           document.write(new Date().getFullYear());
         </script>
-        Bürgy Photo. Tous droits réservés.
+        BÜRGY PHOTO. All rights reserved.
       </p>
     </footer>
   </body>

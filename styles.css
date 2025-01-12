@@ -1,108 +1,107 @@
 html {
-  font-family: sans-serif;
+  font-family: Avenir, sans-serif;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 body {
-  min-height: 100vh;
-  flex-direction: column;
-  display: flex;
-  margin: 0;
-  padding-inline: 33px;
-  background-color: #f2f2f2;
-  color: #333;
-}
-
-header {
-  border-bottom: 2px solid black;
-}
-
-.menu {
-  display: flex;
-  gap: 0.625%;
+  height: 100vh;
+  width: 960px;
+  /* display: flex;
+  flex-direction: column; */
+  background-color: white;
+  color: black;
+  margin-left: 20px;
+  margin-right: 25px;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid greenyellow;
+  border-bottom: 2px solid black;
 }
 
 nav a {
   text-decoration: none;
   outline-color: transparent;
   line-height: 2;
-  border: 1px solid aqua;
-  color: #333;
+  color: black;
 }
 
-nav a.active {
-  font-weight: bold;
+.menu {
+  display: flex;
+  gap: 15px;
 }
 
-h1,
-h2 {
+main {
+  margin-bottom: 30px;
+}
+
+h1 {
   text-transform: uppercase;
-  font-family: Helvetica, sans-serif;
   font-size: 1.5rem;
 }
-
-h2 {
-  text-shadow: 1px 5px 1px yellow;
+h1 a {
+  text-decoration: none;
+  color: black;
 }
 
-#gallery {
+h1 a span {
+  color: red;
+}
+
+.gallery {
   display: flex;
-  justify-content: space-between;
-  flex: 1;
-  border: 1px solid red;
-  flex-wrap: wrap;
-  /* width: 90vw; */
-  /* padding: 10px; */
+  gap: 20px;
 }
+
 figure {
-  /* max-width: 640px; */
   display: table;
   align-items: right;
   justify-content: center;
   max-height: fit-content;
-  border: 1px solid;
-}
-
-@media only screen and (max-width: 640px) {
-  .gallery {
-    flex-direction: column;
-  }
-  nav {
-    flex-direction: column;
-  }
-}
-
-body {
   margin: 0;
 }
 
 figcaption {
   display: table-caption;
   caption-side: bottom;
+  vertical-align: top;
   font-style: italic;
-  border: 1px solid black;
 }
 
 img {
   max-width: 100%;
   vertical-align: middle;
-  object-fit: cover;
   height: 16rem;
   width: 16rem;
-  border: 1px solid black;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
+@media only screen and (max-width: 640px) {
+  .gallery {
+    flex-direction: column;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  nav {
+    flex-direction: column;
+  }
+}
 footer {
+  text-align: center;
   border-top: 1px solid black;
   margin-top: auto;
-  display: block;
   bottom: 0;
   width: 100%;
   position: relative;
+  font-size: 0.8em;
+}
+footer address {
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
