@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>BÜRGY PHOTO</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css"/>
     <link rel="icon" type="image/png" href="./media/favicon_io/favicon.ico"/>
-  </head>
-  <body>
-    <header>
-      <h1>
+</head>
+<body>
+<header>
+    <h1>
         <a href="index.html">&#9678 BÜRGY <span>PHOTO</span></a>
-      </h1>
-      <nav class="menu">
+    </h1>
+    <nav class="menu">
         <a href="#stories">Stories</a>
         <a href="#rates">Rates</a>
-      </nav>
-    </header>
+    </nav>
+</header>
 
-    <main>
-      <section id="about">
+<main>
+    <section id="about">
         <h2>About</h2>
         <p>
             Welcome to my portfolio. My work focuses on documentation of theatre
@@ -29,59 +29,94 @@
             lenses (1.4/25, 1.4/50 and 2/135).
 
         </p>
-      </section>
+    </section>
 
-      <section id="stories">
+    <section id="stories">
         <h2>Stories</h2>
         <div class="gallery">
-          <figure>
-            <img src="media/DSC_5136.jpg" alt="" />
-            <figcaption>Look at the sky</figcaption>
-          </figure>
+            <figure>
+                <img src="media/DSC_5136.jpg" alt=""/>
+                <figcaption>Look at the sky</figcaption>
+            </figure>
 
-          <figure>
-            <img src="media/DSC_5146.jpg" alt="" />
-            <figcaption>Schlittel!</figcaption>
-          </figure>
+            <figure>
+                <img src="media/DSC_5146.jpg" alt=""/>
+                <figcaption>Schlittel!</figcaption>
+            </figure>
 
-          <figure>
-            <img src="media/DSC_5152.jpg" alt="" />
-            <figcaption>Did you see the frozen waterfall?</figcaption>
-          </figure>
+            <figure>
+                <img src="media/DSC_5152.jpg" alt=""/>
+                <figcaption>Did you see the frozen waterfall?</figcaption>
+            </figure>
 
-          <figure>
-            <img src="media/DSC_5175.jpg" alt="" />
-            <figcaption>What a m'as-tu-vu!</figcaption>
-          </figure>
+            <figure>
+                <img src="media/DSC_5175.jpg" alt=""/>
+                <figcaption>What a m'as-tu-vu!</figcaption>
+            </figure>
 
-          <figure>
-            <img src="media/DSC_5183.jpg" alt="" />
-            <figcaption>Let's unfold some sunny vibes</figcaption>
-          </figure>
+            <figure>
+                <img src="media/DSC_5183.jpg" alt=""/>
+                <figcaption>Let's unfold some sunny vibes</figcaption>
+            </figure>
         </div>
-      </section>
 
-      <section id="rates">
+        <div id="lightbox">
+            <figure>
+                <img id="lightbox-img" src="" alt="">
+                <figcaption id="lightbox-caption"></figcaption>
+            </figure>
+        </div>
+
+    </section>
+
+    <section id="rates">
         <h2>Rates</h2>
-        I propose a fix hourly rate of CHF 280 (min. 1 h in Neuchâtel, 2 h elsewhere), which comprises the postprocessing.
-      </section>
-    </main>
-    <footer>
-      <address>
+        I propose a fix hourly rate of CHF 280 (min. 1 h in Neuchâtel, 2 h elsewhere), which comprises the
+        postprocessing.
+    </section>
+</main>
+<footer>
+    <address>
         Neuchâtel - Switzerland
         <a href="mailto:leo.burgy@gmail.com">leo.burgy@gmail.com</a>
-        <a href="https://www.instagram.com/leoburgy" target="_blank"
-          >@leoburgy</a
+        <a href="https://www.instagram.com/leobuergy" target="_blank"
+        >@leobuergy</a
         >
         <a href="tel:+41763084807">+41763084807</a>
-      </address>
-      <p>
+    </address>
+    <p>
         &copy;
         <script>
-          document.write(new Date().getFullYear());
+            document.write(new Date().getFullYear());
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            document.querySelectorAll('.gallery figure').forEach(fig => {
+                const img = fig.querySelector('img');
+                const caption = fig.querySelector('figcaption')
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxCaption.textContent = caption.textContent;
+                    lightbox.style.display = 'flex';
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    lightbox.style.display = 'none';
+                }
+            })
+
         </script>
         BÜRGY PHOTO. All rights reserved.
-      </p>
-    </footer>
-  </body>
+    </p>
+</footer>
+</body>
 </html>
