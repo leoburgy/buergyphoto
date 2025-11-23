@@ -84,39 +84,46 @@
         >
         <a href="tel:+41763084807">+41763084807</a>
     </address>
-    <p>
-        &copy;
-        <script>
-            document.write(new Date().getFullYear());
-            const lightbox = document.getElementById("lightbox");
-            const lightboxImg = document.getElementById("lightbox-img");
-            const lightboxCaption = document.getElementById('lightbox-caption');
-
-            document.querySelectorAll('.gallery figure').forEach(fig => {
-                const img = fig.querySelector('img');
-                const caption = fig.querySelector('figcaption')
-                img.addEventListener('click', () => {
-                    lightboxImg.src = img.src;
-                    lightboxCaption.textContent = caption.textContent;
-                    lightbox.style.display = 'flex';
-                });
-            });
-
-            document.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    lightbox.style.display = 'none';
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    lightbox.style.display = 'none';
-                }
-            })
-
-        </script>
-        BÜRGY PHOTO. All rights reserved.
-    </p>
+    <p> &copy; <span id="year"></span> BÜRGY PHOTO. All rights reserved. </p>
 </footer>
+
+<script>
+    // Inject the year in the copyright
+    document.getElementById("year").textContent = new Date().getFullYear().toString();
+
+    // Lightbox logic
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    const galleryFigures = document.querySelectorAll('.gallery figure')
+
+    for (const fig of galleryFigures) {
+
+        const img = fig.querySelector('img');
+        const caption = fig.querySelector('figcaption')
+
+        if (!img || !caption) continue;
+
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = caption.textContent ?? "";
+            lightbox.style.display = 'flex';
+        });
+    }
+
+    document.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            lightbox.style.display = 'none';
+        }
+    })
+
+</script>
 </body>
 </html>
